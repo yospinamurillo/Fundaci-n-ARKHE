@@ -8,451 +8,31 @@
       name="description"
       content="Fundación ARKHE impulsa comunidades y territorios desde el arte, la memoria, la naturaleza y la tecnología."
     />
-    <style>
-      :root {
-        --bg: #faf6ee;
-        --bg-alt: #f1e8d7;
-        --surface: #fffdf9;
-        --text: #2b2a27;
-        --muted: #666051;
-        --primary: #2f5d3a;
-        --primary-dark: #23492f;
-        --primary-soft: #e8f0e6;
-        --accent: #b8642f;
-        --accent-soft: #f4e3d8;
-        --line: #e7dfd0;
-        --shadow: 0 20px 45px rgba(28, 35, 25, 0.08);
-        --radius: 22px;
-      }
-
-      * { box-sizing: border-box; }
-
-      html { scroll-behavior: smooth; }
-
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.65;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .container {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-      }
-
-      .eyebrow {
-        display: inline-block;
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 0.76rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      h1, h2, h3 {
-        margin: 0 0 0.7em;
-        line-height: 1.08;
-        font-family: Georgia, "Times New Roman", serif;
-      }
-
-      h1 {
-        font-size: clamp(2.4rem, 5vw, 4.4rem);
-        letter-spacing: -0.04em;
-      }
-
-      h2 {
-        font-size: clamp(2rem, 4vw, 3.1rem);
-      }
-
-      p {
-        margin: 0 0 1rem;
-        color: var(--muted);
-        font-size: 1.04rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 999px;
-        padding: 0.9rem 1.5rem;
-        font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-      }
-
-      .btn.primary {
-        background: var(--primary);
-        color: #fff;
-        box-shadow: 0 14px 24px rgba(47, 93, 58, 0.2);
-      }
-
-      .btn.secondary {
-        border: 1.5px solid var(--primary);
-        color: var(--primary);
-        background: transparent;
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(250, 246, 238, 0.9);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--line);
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 72px;
-        gap: 1.2rem;
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--primary);
-        font-size: 0.9rem;
-      }
-
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--primary), #6b8d6d);
-        color: white;
-        font-weight: 700;
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        flex-wrap: wrap;
-      }
-
-      .nav-links a {
-        color: var(--text);
-        font-size: 0.96rem;
-        opacity: 0.88;
-      }
-
-      .hero {
-        background: linear-gradient(180deg, #edf4eb 0%, #f7f3ed 100%);
-        padding: 5.5rem 0 4.5rem;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .hero-copy p {
-        font-size: 1.15rem;
-        max-width: 560px;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.9rem;
-        margin-top: 1.6rem;
-      }
-
-      .hero-panel {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        padding: 1.5rem;
-        box-shadow: var(--shadow);
-      }
-
-      .mini-stat {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
-        margin-top: 1rem;
-      }
-
-      .mini-stat div {
-        background: var(--primary-soft);
-        border: 1px solid rgba(47, 93, 58, 0.08);
-        border-radius: 18px;
-        padding: 1rem;
-      }
-
-      .mini-stat strong {
-        display: block;
-        color: var(--primary);
-        font-size: 1.8rem;
-        line-height: 1;
-        margin-bottom: 0.3rem;
-      }
-
-      section {
-        padding: 5rem 0;
-      }
-
-      .section-head {
-        max-width: 720px;
-        margin-bottom: 2.3rem;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1.2rem;
-      }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: 1.5rem;
-        box-shadow: 0 10px 28px rgba(39, 33, 22, 0.03);
-      }
-
-      .card .icon {
-        width: 52px;
-        height: 52px;
-        display: grid;
-        place-items: center;
-        border-radius: 14px;
-        background: var(--accent-soft);
-        color: var(--accent);
-        font-size: 1.6rem;
-        margin-bottom: 0.8rem;
-      }
-
-      .card h3 {
-        font-size: 1.35rem;
-      }
-
-      .about {
-        background: linear-gradient(180deg, #f7f5f1 0%, #fcfaf7 100%);
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: center;
-      }
-
-      .about-visual {
-        background: linear-gradient(135deg, #dfeadf, #efe4d5);
-        min-height: 420px;
-        border-radius: 28px;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid var(--line);
-      }
-
-      .about-visual::before,
-      .about-visual::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-      }
-
-      .about-visual::before {
-        inset: 12% auto auto 12%;
-        width: 250px;
-        height: 250px;
-        background: rgba(47, 93, 58, 0.12);
-      }
-
-      .about-visual::after {
-        right: 10%;
-        bottom: 10%;
-        width: 300px;
-        height: 300px;
-        background: rgba(184, 100, 47, 0.1);
-      }
-
-      .quote {
-        position: absolute;
-        left: 2rem;
-        right: 2rem;
-        bottom: 2rem;
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(43, 42, 39, 0.05);
-        border-radius: 20px;
-        padding: 1.25rem 1.4rem;
-        backdrop-filter: blur(5px);
-      }
-
-      .quote strong {
-        display: block;
-        margin-bottom: 0.4rem;
-        color: var(--primary);
-      }
-
-      .pill-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.2rem;
-      }
-
-      .pill {
-        background: var(--primary-soft);
-        color: var(--primary-dark);
-        border-radius: 999px;
-        padding: 0.55rem 0.9rem;
-        font-weight: 700;
-        font-size: 0.9rem;
-      }
-
-      .programs {
-        background: #fbf9f6;
-      }
-
-      .program-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.2rem;
-      }
-
-      .program-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        overflow: hidden;
-      }
-
-      .program-visual {
-        height: 180px;
-        background: linear-gradient(135deg, #dfeadf, #f0d9bf);
-      }
-
-      .program-body {
-        padding: 1.4rem 1.3rem 1.6rem;
-      }
-
-      .program-body h3 {
-        font-size: 1.45rem;
-      }
-
-      .metrics {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .metric {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 1.2rem;
-      }
-
-      .metric strong {
-        display: block;
-        color: var(--primary);
-        font-size: 2rem;
-        line-height: 1.1;
-      }
-
-      .cta {
-        background: linear-gradient(135deg, var(--primary), #3c734e);
-        color: white;
-      }
-
-      .cta .container {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .cta p {
-        color: rgba(255,255,255,0.8);
-      }
-
-      .cta .btn.secondary {
-        color: white;
-        border-color: rgba(255,255,255,0.8);
-      }
-
-      footer {
-        background: #1d261f;
-        color: rgba(255,255,255,0.82);
-        padding: 2rem 0;
-      }
-
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      @media (max-width: 900px) {
-        .hero-grid,
-        .about-grid,
-        .cta .container,
-        .cards,
-        .program-grid,
-        .metrics {
-          grid-template-columns: 1fr;
-        }
-
-        .nav-links {
-          display: none;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav aria-label="Navegación principal">
-          <a href="#inicio" class="brand" aria-label="Fundación ARKHE inicio">
-            <span class="brand-mark">A</span>
-            <span>ARKHE</span>
-          </a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#inicio" class="brand" aria-label="Fundación ARKHE inicio">
+          <span class="brand-mark">A</span>
+          <span>ARKHE</span>
+        </a>
 
-          <div class="nav-links">
-            <a href="#nosotros">Nosotros</a>
-            <a href="#programas">Programas</a>
-            <a href="#impacto">Impacto</a>
-            <a href="#contacto">Contacto</a>
-          </div>
-        </nav>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          Menú
+        </button>
+
+        <div class="nav-links" id="navMenu">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#programas">Programas</a>
+          <a href="#impacto">Impacto</a>
+          <a href="#contacto">Contacto</a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero" id="inicio">
+      <section class="hero reveal" id="inicio">
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Arte · Memoria · Naturaleza · Tecnología · Comunidad</span>
@@ -497,7 +77,7 @@
         </div>
       </section>
 
-      <section class="about" id="nosotros">
+      <section class="about reveal" id="nosotros">
         <div class="container about-grid">
           <div>
             <span class="eyebrow">Nosotros</span>
@@ -530,7 +110,7 @@
         </div>
       </section>
 
-      <section class="programs" id="programas">
+      <section class="programs reveal" id="programas">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">Programas</span>
@@ -574,7 +154,7 @@
         </div>
       </section>
 
-      <section id="impacto">
+      <section id="impacto" class="reveal">
         <div class="container">
           <div class="section-head">
             <span class="eyebrow">Impacto</span>
@@ -598,7 +178,7 @@
         </div>
       </section>
 
-      <section class="cta" id="contacto">
+      <section class="cta reveal" id="contacto">
         <div class="container">
           <div>
             <span class="eyebrow" style="color: #f4d7be;">Contacto</span>
@@ -616,7 +196,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <div class="container footer-inner">
         <div>
           <strong>Fundación ARKHE</strong><br />
@@ -625,5 +205,7 @@
         <div>Bogotá, Colombia</div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
