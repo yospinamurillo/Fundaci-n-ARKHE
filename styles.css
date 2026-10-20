@@ -230,34 +230,78 @@ p {
   margin-top: 1.6rem;
 }
 
-.hero-panel {
-  background: var(--surface);
+.hero-visual {
+  position: relative;
+  min-height: 430px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(47, 93, 58, 0.12), rgba(184, 100, 47, 0.16));
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.5rem;
+  overflow: hidden;
   box-shadow: var(--shadow);
 }
 
-.mini-stat {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: float 8s ease-in-out infinite;
 }
 
-.mini-stat div {
+.orb-one {
+  width: 220px;
+  height: 220px;
+  background: rgba(47, 93, 58, 0.18);
+  top: 8%;
+  right: 12%;
+}
+
+.orb-two {
+  width: 260px;
+  height: 260px;
+  background: rgba(184, 100, 47, 0.18);
+  left: 8%;
+  bottom: 8%;
+  animation-delay: 2s;
+}
+
+.visual-card {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(43, 42, 39, 0.05);
+  border-radius: 24px;
+  padding: 1.5rem 1.4rem;
+  backdrop-filter: blur(8px);
+}
+
+.mini-tag {
+  display: inline-block;
   background: var(--primary-soft);
-  border: 1px solid rgba(47, 93, 58, 0.08);
-  border-radius: 18px;
-  padding: 1rem;
+  color: var(--primary-dark);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
 }
 
-.mini-stat strong {
-  display: block;
-  color: var(--primary);
-  font-size: 1.8rem;
-  line-height: 1;
-  margin-bottom: 0.3rem;
+.visual-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.visual-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.visual-card li + li {
+  margin-top: 0.35rem;
 }
 
 section {
@@ -267,6 +311,10 @@ section {
 .section-head {
   max-width: 720px;
   margin-bottom: 2.3rem;
+}
+
+.section-head.narrow {
+  max-width: 560px;
 }
 
 .cards {
@@ -375,8 +423,42 @@ section {
   font-size: 0.9rem;
 }
 
-.programs {
+.principios {
   background: #fbf9f6;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.5rem;
+  box-shadow: 0 12px 24px rgba(39, 33, 22, 0.03);
+}
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+}
+
+.programs {
+  background: #fffdfb;
 }
 
 .program-grid {
@@ -477,10 +559,21 @@ section {
   transform: translateY(0);
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .about-grid,
   .cta .container,
+  .feature-grid,
   .cards,
   .program-grid,
   .metrics {
